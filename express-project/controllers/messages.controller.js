@@ -1,7 +1,14 @@
+import path from 'path';
 
+const __dirname = path.resolve();
 
 function getMessages(req, res) {
-    res.send('<ul><li>Hello World!</li></ul>');
+    res.render('messages', {
+        title: 'Messages',
+        friends: 'kenny'
+    })
+
+    //res.sendFile(path.join(__dirname, '.', 'public', 'images','skimountain.jpg'));
 }
 
 function postMessage(req, res) {
